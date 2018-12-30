@@ -3,3 +3,6 @@ build:
 
 run:
 	docker run --rm -it -w=/work -v=$(CURDIR):/work mecab:latest /bin/bash
+
+ipython:
+        docker run --rm -it -w=/work -v=$(CURDIR):/work mecab:latest ipython
