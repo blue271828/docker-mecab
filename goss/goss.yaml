@@ -1,0 +1,5 @@
+package:
+  mecab:
+    installed: true
+  mecab-ipadic-utf8:
+    installed: true
