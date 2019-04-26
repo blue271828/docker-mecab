@@ -4,25 +4,50 @@
 
 
 
+This container has [MeCab](http://taku910.github.io/mecab/) installed and ready to use. MeCab is a Japanese open source morphological analysis library. Please refer the MeCab documentation for more information.
+
+
+
 ## Usage
 
-To execute `make` command, you need to be in docker-mecab directory.
-
-
-Build docker image. 
+This project provides container images on [Docker Hub](https://hub.docker.com/r/blue271828/mecab). 
 
 ```bash
-$ make build
+$ docker pull blue271828/mecab
 ```
 
-Run `bash` command in the temporary docker-mecab container. when running, the current directory is mounted.
+
+
+You can use `mecab` command directly as below.
 
 ```bash
-$ make run
+$ docker run -it --rm blue271828/mecab mecab
+本日は晴天なり
+本日    名詞,副詞可能,*,*,*,*,本日,ホンジツ,ホンジツ
+は      助詞,係助詞,*,*,*,*,は,ハ,ワ
+晴天    名詞,一般,*,*,*,*,晴天,セイテン,セイテン
+なり    助動詞,*,*,*,文語・ナリ,基本形,なり,ナリ,ナリ
+EOS
 ```
 
-Run `ipython` command in the temporary docker-mecab container. when running, the current directory is mounted.
+
+
+This container image supports using mecab on ipython. You can use MeCab via me [mecab-python3](https://pypi.org/project/mecab-python3/) library from that envronment.
 
 ```bash
-$ make ipython
+$ docker run -it --rm blue271828/mecab ipython
 ```
+
+Follows are basic usage.
+
+```python
+>>> import MeCab
+>>> chasen = MeCab.Tagger("-O chasen")
+>>> print(chasen.parse("本日は晴天なり"))
+本日    ホンジツ        本日    名詞-副詞可能
+は      ハ      は      助詞-係助詞
+晴天    セイテン        晴天    名詞-一般
+なり    ナリ    なり    助動詞  文語・ナリ      基本形
+EOS
+```
+
