@@ -4,13 +4,13 @@
 
 
 
-This container has [MeCab](http://taku910.github.io/mecab/) installed and ready to use. MeCab is a Japanese open source morphological analysis library. Please refer the MeCab documentation for more information.
+This image has [MeCab](http://taku910.github.io/mecab/) installed and ready to use. MeCab is a Japanese open source morphological analysis library. Please refer the MeCab documentation for more information.
 
 
 
 ## Usage
 
-This project provides container images on [Docker Hub](https://hub.docker.com/r/blue271828/mecab). 
+This project provides images on [Docker Hub](https://hub.docker.com/r/blue271828/mecab). 
 
 ```bash
 $ docker pull blue271828/mecab
@@ -32,7 +32,7 @@ EOS
 
 
 
-This container image supports using mecab on ipython. You can use MeCab via me [mecab-python3](https://pypi.org/project/mecab-python3/) library from that envronment.
+This project supports using mecab on ipython. You can use MeCab via me [mecab-python3](https://pypi.org/project/mecab-python3/) library from that envronment.
 
 ```bash
 $ docker run -it --rm blue271828/mecab ipython
