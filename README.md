@@ -32,7 +32,7 @@ EOS
 
 
 
-This project supports using mecab on ipython. You can use MeCab via me [mecab-python3](https://pypi.org/project/mecab-python3/) library from that envronment.
+This project supports using mecab on ipython. You can use MeCab via [mecab-python3](https://pypi.org/project/mecab-python3/) library from that environment.
 
 ```bash
 $ docker run -it --rm blue271828/mecab ipython
